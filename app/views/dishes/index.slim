@@ -1,0 +1,5 @@
+h3.text-center Products for Sale
+.row
+  .column_style_1
+    - @dishes.each do |dish|
+      = render "dish_row", dish: dish, menu_dish: @menu_dish
