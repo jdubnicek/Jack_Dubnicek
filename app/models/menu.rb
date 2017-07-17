@@ -1,7 +1,7 @@
 class Menu < ApplicationRecord
   belongs_to :order_status
   has_many :menu_dishes
-  before_create :set_order_status
+  before_validation :set_order_status, on: :create
   before_save :update_subtotal
 
   def subtotal

@@ -1,0 +1,11 @@
+- if !@order_item.nil? && @order_item.errors.any?
+  .alert.alert-danger
+    ul
+      - @menu_dishes.errors.full_messages.each do |msg|
+        li = msg 
+- if @menu_dishes.size == 0
+  p.text-center
+    | There are no items in your shopping cart.  Please "#{= link_to "go back", root_path}" and add some items to your cart.
+- else
+  - @menu_dishes.each do |menu_dish|
+    = render 'menus/menu_row', product: menu_dish.product, menu_dish: menu_dish, show_total: true
