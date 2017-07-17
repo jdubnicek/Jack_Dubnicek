@@ -21,7 +21,7 @@ class MenuDishesController < ApplicationController
   end
 
   private
-  def menu_item_params
-    params.require(:menu_dish).permit(:quantity, :product_id)
+  def menu_dish_params
+    params.require(:menu_dish).permit(:quantity, :dish_id)
   end
 end

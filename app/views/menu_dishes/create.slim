@@ -1,4 +1,4 @@
-- if @menu.errors.any? || @menu_dish.errors.any?
-  | alert("not valid.")
-- else
-  | $(".cart-text").html("#{escape_javascript(render 'layouts/menu_text')}")
+/ - if @menu.errors.any? || @menu_dish.errors.any?
+/   | alert("not valid.")
+/ - else
+| $(".cart-text").html("#{escape_javascript(render 'layouts/menu_text')}")
