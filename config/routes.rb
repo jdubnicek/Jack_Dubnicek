@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :dishes, only: [:index]
   resource :menu, only: [:show]
   resources :menu_dishes, only: [:create, :update, :destroy]
+    delete "/menu_dishes/:id", to: "menu_dishes#destroy", as: :delete_dish
 
 end
