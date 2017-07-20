@@ -2,17 +2,17 @@ require 'test_helper'
 
 class MenuDishesControllerTest < ActionDispatch::IntegrationTest
   test "should get create" do
-    get menu_dishes_create_url
+    post menu_dishes_path
     assert_response :success
   end
 
   test "should get update" do
-    get menu_dishes_update_url
+    get menu_dish_update_path
     assert_response :success
   end
 
   test "should get destroy" do
-    get menu_dishes_destroy_url
+    get delete_dish_path
     assert_response :success
   end
 
