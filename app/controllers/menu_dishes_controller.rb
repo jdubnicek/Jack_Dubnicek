@@ -2,7 +2,13 @@ class MenuDishesController < ApplicationController
   def create
     @menu = current_order
     @menu_item = @menu.menu_dishes.new(menu_dish_params)
-    @menu.save
+    binding.pry
+    existing_menu = @menu.menu_dishes.where(dish_id: params[:menu_dishes][:dish_id])
+    if existing_menu.count >= 1
+      existing_menu.last.update_column(:quantity, existing_menu.last.quantity + params[:menu_dishes][:quantity].to_i)
+    else
+      @menu.save
+    end
     session[:menu_id] = @menu.id
   end
 
