@@ -7,15 +7,5 @@
   p.text-center
     | There are no items in your shopping cart.  Please "#{link_to "Go Back", root_path}" and add some items to your cart.
 - else
-  .container
-    table.dishes-list
-      thead
-        tr
-          th Category
-          th Name
-          th Description
-          th Price
-          th Update Quantity
-      tbody
-        - @menu_dishes.each do |menu_dish|
-          = render 'menus/menu_row', dish: menu_dish.dish, menu_dish: menu_dish, show_total: true
+  - @menu_dishes.each do |menu_dish|
+    = render 'menus/menu_row', dish: menu_dish.dish, menu_dish: menu_dish, show_total: true

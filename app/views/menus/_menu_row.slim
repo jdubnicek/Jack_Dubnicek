@@ -1,10 +1,8 @@
 .well
   .row
-    .col-xs-6
-      td.category = dish.category
-      td.name = dish.name
-    .col-xs-6
-      td.description = dish.description
+    .col-xs-8
+      h4 = dish.name
+    .col-xs-4
       = form_for menu_dish, remote: true do |f|
         h4.text-right
           | Unit Price:
