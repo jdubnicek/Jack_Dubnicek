@@ -3,7 +3,7 @@
     ul
       - @menu_dishes.errors.full_messages.each do |msg|
         li = msg 
-- if @menu_dishes.size == 0
+- if @menu_dishes == nil || @menu_dishes.map(&:quantity).reduce(0, :+) == 0
   p.text-center
     | There are no items in your shopping cart.  Please "#{link_to "Go Back", root_path}" and add some items to your cart.
 - else
