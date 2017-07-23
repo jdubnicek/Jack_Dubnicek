@@ -38,7 +38,7 @@ categories.each do |category|
 end
 
 
-puts "Creating Menu Items"
+puts "Creating Dishes"
 menu_items = [
   appetizer =   [["Bruschetta", "Toasted French Bread topped with tomatoes and basil", "3.99" ],
                   ["Caesar Salad", "Romaine lettuce, parmesan cheese, croutons, Caesar dressing", "3.99"],
