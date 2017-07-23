@@ -19,7 +19,7 @@ class MenuDishesController < ApplicationController
     @menu = current_order
     @menu_item = @menu.menu_dishes.find(params[:id])
     @menu_item.update_attributes(menu_dish_params)
-    @menu_items = @menu.menu_dishes
+    @menu_dishes = @menu.menu_dishes
     respond_to do |format|
       format.html
       format.js { render layout: false }
@@ -30,7 +30,7 @@ class MenuDishesController < ApplicationController
     @menu = current_order
     @menu_item = @menu.menu_dishes.find(params[:id])
     @menu_item.destroy
-    @menu_items = @menu.menu_dishes
+    @menu_dishes = @menu.menu_dishes
     respond_to do |format|
       format.html
       format.js { render layout: false }
