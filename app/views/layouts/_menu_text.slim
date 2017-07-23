@@ -1,1 +1,1 @@
-= link_to "#{current_order.menu_dishes.map(&:quantity).reduce(0, :+)} Items in Cart ( #{number_to_currency current_order.subtotal} )", menu_path, class: "subtotal menu-text"
+= link_to "#{current_order.menu_dishes.map(&:quantity).reduce(0, :+)} Items in Cart ( #{number_to_currency current_order.subtotal} )", menu_path, class: "btn btn-link"

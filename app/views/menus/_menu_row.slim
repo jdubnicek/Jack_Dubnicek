@@ -1,20 +1,20 @@
 .well
   .row
-    .col_stlye_3
+    .col-xs-8
       h4 = dish.name
-    .col_style_4
+    .col-xs-4
       = form_for menu_dish, remote: true do |f|
         h4.text-right
           | Unit Price:
           span style=("color: green") = number_to_currency menu_dish.unit_price
         .row
-          .column_style_1
+          .col-xs-4
             = f.number_field :quantity, value: menu_dish.quantity.to_i, class: "form-control", min: 1
             = f.hidden_field :dish_id, value: dish.id
-          .column_style_2
-            .button
-              = f.submit "Update Quantity", class: "button"
-              = link_to "Delete", menu_dish, { data: { confirm: "Are you sure you wish to delete the product '#{menu_dish.dish.name}' from your cart?" }, method: :delete, remote: true, class: "button" }
+          .col-xs-8.text-right
+            .btn-group
+              = f.submit "Update Quantity", class: "btn btn-primary"
+              = link_to "Delete", menu_dish, { data: { confirm: "Are you sure you wish to delete the product '#{menu_dish.dish.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" }
       h4.text-right
         | Total Price:
         span style=("color: green")  = number_to_currency menu_dish.total_price

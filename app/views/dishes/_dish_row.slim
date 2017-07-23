@@ -1,9 +1,9 @@
 .well
   .row
-    .column_stlye_1
+    .col-xs-8
       h4
         = dish.name
-    .column_style_1
+    .col-xs-4
       = form_for menu_dish, remote: true do |f|
         h4.text-right
           | Unit Price:
@@ -12,4 +12,4 @@
             = f.number_field :quantity, value: 1, class: "form-control", min: 1
             .input-group-btn
               = f.hidden_field :dish_id, value: dish.id
-              = f.submit "Add to Cart", class: "button"
+              = f.submit "Add to Cart", class: "btn btn-primary"
