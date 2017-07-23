@@ -1,5 +1,5 @@
 h3.text-center Products for Sale
 .row
-  .column_style_1
+  .col-xs-6.col-xs-offset-3
     - @dishes.each do |dish|
       = render "dish_row", dish: dish, menu_dish: @menu_dish
