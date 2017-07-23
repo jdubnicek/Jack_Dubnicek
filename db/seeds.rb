@@ -70,15 +70,14 @@ dishes = {
 }
 
 Dish.destroy_all
-dishes.each do |dish|
-  dish.each do |properties|
-    binding.pry
-    category = Category.find_by(name: "#{properties}")
-    Dish.create!({name: properties[0],
-                      description: properties[1],
-                      category: category.id,
-                      price: [2]})
-    puts "Dish #{item} has been created"
+dishes.each do |key, values|
+  dishes[key].each do |values|
+    category = Category.find_by(name: "#{key}")
+    Dish.create!({name: values[0],
+                      description: values[1],
+                      category: category,
+                      price: values[2]})
+    puts "Dish #{values[0]} has been created"
   end
 end
 
