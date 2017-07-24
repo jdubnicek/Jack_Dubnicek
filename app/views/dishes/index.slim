@@ -1,13 +1,11 @@
-.panel.panel-default 
-  .panel-heading Items for Sale
-  table.table-striped
-    thead
+table.table-striped
+  thead
+    tr
+      th Category
+      th Name
+      th Description
+      th Price
+  tbody
+    - @dishes.each do |dish|
       tr
-        th Category
-        th Name
-        th Description
-        th Price
-    tbody
-      - @dishes.each do |dish|
-        tr
-          = render "dish_row", dish: dish, menu_dish: @menu_dish
+        = render "dish_row", dish: dish, menu_dish: @menu_dish
