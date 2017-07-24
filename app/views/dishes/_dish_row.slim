@@ -1,15 +1,13 @@
-.well
-  .row
-    .col-xs-8
-      h4
-        = dish.name
-    .col-xs-4
-      = form_for menu_dish, remote: true do |f|
-        h4.text-right
-          | Unit Price:
-          span style=("color: green") = number_to_currency dish.price
-          .input-group
-            = f.number_field :quantity, value: 1, class: "form-control", min: 1
-            .input-group-btn
-              = f.hidden_field :dish_id, value: dish.id
-              = f.submit "Add to Cart", class: "btn btn-primary"
+tr
+  td = dish.category.display_name
+  td = dish.name
+  td = dish.description
+  td = form_for menu_dish, remote: true do |f|
+      h4.text-right
+        | Price:
+        span style=("color: green") = number_to_currency dish.price
+        .input-group
+          = f.number_field :quantity, value: 1, class: "form-control", min: 1
+          .input-group-btn
+            = f.hidden_field :dish_id, value: dish.id
+            = f.submit "Add to Cart", class: "btn btn-primary"

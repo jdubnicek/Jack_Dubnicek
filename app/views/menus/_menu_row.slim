@@ -1,6 +1,7 @@
 .well
   .row
     .col-xs-8
+      h4 = dish.category.display_name
       h4 = dish.name
     .col-xs-4
       = form_for menu_dish, remote: true do |f|
