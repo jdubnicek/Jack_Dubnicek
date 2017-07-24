@@ -1,10 +1,10 @@
 tr
-  td = dish.category.name
+  td = dish.category.display_name
   td = dish.name
   td = dish.description
-    = form_for menu_dish, remote: true do |f|
+  td = form_for menu_dish, remote: true do |f|
       h4.text-right
-        | Unit Price:
+        | Price:
         span style=("color: green") = number_to_currency dish.price
         .input-group
           = f.number_field :quantity, value: 1, class: "form-control", min: 1
