@@ -12,7 +12,7 @@ class MenuDishesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get destroy" do
-    get delete_dish_path
+    get delete_menu_dish_path
     assert_response :success
   end
 
