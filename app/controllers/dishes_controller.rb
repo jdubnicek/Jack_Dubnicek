@@ -6,7 +6,7 @@ class DishesController < ApplicationController
   end
 
   def create
-    @dish = Dish.new(params)
+    @dish = Dish.new(dish_params)
     if @dish.save
       redirect_to dishes_path
     else
@@ -27,10 +27,15 @@ class DishesController < ApplicationController
 
   def update
     @dish = Dish.find(:id)
+    if @dish.update_attributes(dish_params)
+      redirect_to dishes_path
+    else
+      render "edit"
   end
 
   def destroy
-    @dish = Dish.find(:id)
+    @dish = Dish.find(:id).destroy
+    redirect_to dishes_path
   end
 
   private
