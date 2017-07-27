@@ -2,7 +2,7 @@
     h1 Add New Dish
     = form_for :dish, url: '/dishes', method: "post" do |f|
       .required = f.label "Dish Category"
-      = f.select :category_id, options_for_select([["UL", "ul"], ["ULC", "ulc"]])
+      = f.select :category_id, options_for_select([["Appetizer", 1], ["Main Course", 2], ["Side Dish", 3], ["Dessert", 4]])
       .required = f.label "Dish Name"
       = f.text_field :name
       .required = f.label "Description"
