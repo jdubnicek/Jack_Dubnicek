@@ -1,12 +1,12 @@
 .add-dish
     h1 Add New Dish
     = form_for :dish, url: '/dishes', method: "post" do |f|
-      .required = f.label "Dish Category"
+      .category_id = f.label "Dish Category"
       = f.select :category_id, options_for_select([["Appetizer", 1], ["Main Course", 2], ["Side Dish", 3], ["Dessert", 4]])
-      .required = f.label "Dish Name"
+      .name = f.label "Dish Name"
       = f.text_field :name
-      .required = f.label "Description"
+      .description = f.label "Description"
       = f.text_field :description
-      .required = f.label "Price"
+      .price = f.label "Price"
       = f.text_field :price
       = f.submit
