@@ -14,6 +14,10 @@ html
   body
     .container
       .row
-        h1 = link_to "Today's Menu", root_path 
-        h1.menu-text = render 'layouts/menu_text' 
+        .col-xs-6
+          h1 = link_to "Today's Menu", root_path 
+          .col-xs-6
+            h4 = link_to "Create Dish", new_dish_path 
+        .col-xs-6
+          h4.menu-text = render 'layouts/menu_text'
       = yield
