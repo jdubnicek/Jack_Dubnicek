@@ -15,5 +15,6 @@ html
     .container
       .row
         h1 = link_to "Today's Menu", root_path 
+        h4 = link_to "Create new Dish", new_dish_path
         h1.menu-text = render 'layouts/menu_text' 
       = yield

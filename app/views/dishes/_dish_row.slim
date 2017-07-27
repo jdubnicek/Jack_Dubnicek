@@ -1,7 +1,7 @@
 tr
   td = dish.category.display_name
-  td = dish.name
-  td = dish.description
+  td = dish[:name]
+  td = dish[:description]
   td = form_for menu_dish, remote: true do |f|
       h5.text-right
         span style=("color: green") = number_to_currency dish.price
