@@ -19,15 +19,15 @@ class DishesController < ApplicationController
   end
 
   def show
-    @dish = Dish.find(:id)
+    @dish = Dish.find(params[:id])
   end
 
   def edit
-    @dish = Dish.find(:id)
+    @dish = Dish.find(params[:id])
   end
 
   def update
-    @dish = Dish.find(:id)
+    @dish = Dish.find(params[:id])
     if @dish.update_attributes(dish_params)
       redirect_to dishes_path
     else
@@ -36,7 +36,7 @@ class DishesController < ApplicationController
   end
 
   def destroy
-    @dish = Dish.find(:id).destroy
+    @dish = Dish.find(params[:id]).destroy
     redirect_to dishes_path
   end
 

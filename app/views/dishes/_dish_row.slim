@@ -11,4 +11,4 @@ tr
             = f.hidden_field :dish_id, value: dish.id
             = f.submit "Add to Cart", class: "btn btn-primary"
         .edit_dish
-          = link_to "Edit Dish", edit_dish_path, url: "/dishes/#{dish.id}/edit", method: "put"
+          = link_to "Edit Dish", edit_dish_path(dish)
