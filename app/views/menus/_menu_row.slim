@@ -1,6 +1,6 @@
 tr
       td = dish.category.display_name
-      td = dish[:name]
+      td = dish.name
       td = form_for menu_dish, remote: true do |f|
           h4.text-right
             | Price:

@@ -1,1 +1,1 @@
-h4.div = link_to "#{current_order.menu_dishes.map(&:quantity).reduce(0, :+)} items selected. Your sub-total is #{number_to_currency current_order.subtotal}", menu_path, class: "btn btn-link"
+= link_to "#{current_order.menu_dishes.map(&:quantity).reduce(0, :+)} items selected. Your sub-total is #{number_to_currency current_order.subtotal}", menu_path, class: "btn btn-link"

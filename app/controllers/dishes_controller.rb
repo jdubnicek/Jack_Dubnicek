@@ -1,7 +1,7 @@
 class DishesController < ApplicationController
 
   def index
-    @dishes = Dish.all
+    @dishes = Dish.order(:category_id)
     @menu_dish = current_order.menu_dishes.new
   end
 
