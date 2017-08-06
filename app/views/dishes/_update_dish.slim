@@ -1,14 +1,18 @@
 .add-dish
     h1 Update Dish
     = form_for @dish do |f|
-      .category_id = f.label "Dish Category"
-      = f.select :category_id, options_for_select([["Appetizer", 1], ["Main Course", 2], ["Side Dish", 3], ["Dessert", 4]])
-      .name = f.label "Dish Name"
-      = f.text_field :name
-      .description = f.label "Description"
-      = f.text_field :description
-      .price = f.label "Price"
-      = f.text_field :price
-      = f.submit "Save Changes", class: "btn btn-link"
+      .form-group
+        = f.label "Dish Category"
+        = f.select :category_id, options_for_select([["Appetizer", 1], ["Main Course", 2], ["Side Dish", 3], ["Dessert", 4]])
+      .form-group
+        = f.label "Dish Name"
+        = f.text_field :name, class: "form-control"
+      .form-group
+        = f.label "Description"
+        = f.text_field :description, class: "form-control"
+      .form-group
+        = f.label "Price"
+        = f.text_field :price, class: "form-control"
+        = f.submit "Save Changes", class: "btn btn-primary"
       .button.link-as-button
-        = link_to "Delete Dish", dish_path(@dish), data: {confirm: "Are you sure?"}, method: :delete
+        = link_to "Delete Dish", dish_path(@dish), data: {confirm: "Are you sure?"}, method: :delete, class: "btn btn-danger"
