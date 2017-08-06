@@ -1,0 +1,18 @@
+nav.navbar.navbar-inverse
+  .container
+    .navbar-header = link_to "Today's Menu", root_path, class: 'navbar-brand'
+    #navbar
+      ul.nav.navbar-nav
+        li = link_to "Home", root_path
+      ul.nav.navbar-nav.pull-right 
+        - if user_signed_in?
+          li.dropdown
+            a.dropdown-toggle.data-toggle = select_tag href: "#" 
+              = current_user.email
+              span.caret
+            ul.dropdown-menu.role
+              li = link_to "Profile", edit_user_registration_path
+              li = link_to "Log out", destroy_user_session_path, method: :delete
+        - else 
+          = link_to "Log In", new_user_session_path
+          = link_to "Sign Up", new_user_registration_path
