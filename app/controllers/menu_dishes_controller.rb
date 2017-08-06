@@ -1,4 +1,5 @@
 class MenuDishesController < ApplicationController
+
   def create
     @menu = current_order
     @menu_item = @menu.menu_dishes.new(menu_dish_params)

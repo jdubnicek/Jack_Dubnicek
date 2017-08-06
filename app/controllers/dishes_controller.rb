@@ -1,4 +1,5 @@
 class DishesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index
     @dishes = Dish.order(:category_id)
