@@ -14,5 +14,5 @@
         = f.label "Price"
         = f.text_field :price, class: "form-control"
         = f.submit "Save Changes", class: "btn btn-primary"
-      .button.link-as-button
+      .delete-dish
         = link_to "Delete Dish", dish_path(@dish), data: {confirm: "Are you sure?"}, method: :delete, class: "btn btn-danger"
