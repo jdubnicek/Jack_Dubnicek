@@ -4,11 +4,12 @@ tr
   td = dish.description
   td = form_for menu_dish, remote: true do |f|
       h5.text-right
-        span style=("color: green") = number_to_currency dish.price
+        span.amount = number_to_currency dish.price
         .input-group
           = f.number_field :quantity, value: 1, class: "form-control", min: 1
           .input-group-btn
             = f.hidden_field :dish_id, value: dish.id
             = f.submit "Add to Cart", class: "btn btn-primary"
         .edit_dish
-          = link_to "Edit Dish", edit_dish_path(dish)
+          - if dish.user == current_user
+            = link_to "Edit Dish", edit_dish_path(dish), class: "btn btn-info"

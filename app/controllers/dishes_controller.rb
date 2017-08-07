@@ -1,4 +1,5 @@
 class DishesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index
     @dishes = Dish.order(:category_id)
@@ -6,7 +7,7 @@ class DishesController < ApplicationController
   end
 
   def create
-    @dish = Dish.new(dish_params)
+    @dish = current_user.dishes.build(dish_params)
     if @dish.save
       redirect_to dishes_path
     else
@@ -15,7 +16,7 @@ class DishesController < ApplicationController
   end
 
   def new
-    @dish = Dish.new
+    @dish = current_user.dishes.build
   end
 
   def show

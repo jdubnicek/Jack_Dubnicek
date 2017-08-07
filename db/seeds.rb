@@ -68,5 +68,3 @@ dishes.each do |key, values|
     puts "Dish #{values[0]} has been created"
   end
 end
-
-# puts "Creating Shopping Carts"
