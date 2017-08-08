@@ -14,14 +14,19 @@ class DishPolicy < ApplicationPolicy
   end
 
   def show?
-    admin? || @dish.published
   end
 
   def update?
-    admin?
+    admin_owner?
   end
 
   def destroy?
-    admin?
+    admin_owner?
+  end
+
+  private
+
+  def admin_owner?
+    @user.admin == true && @dish.user_id == @user.id
   end
 end
