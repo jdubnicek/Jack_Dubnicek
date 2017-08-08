@@ -1,8 +1,20 @@
 class DishPolicy < ApplicationPolicy
-  class Scope < Scope
+  attr_reader :user
+
+  class  Scope < Scope
     def resolve
-      scope.where(published: true).or(scope.where(user_id: @user.try(:id)))
+      if user.nil?
+        scope.where('published: true')
+      elsif user.try(:admin?)
+        scope.all
+      else
+        scope.where('published: true')
+      end
     end
+  end
+
+  def initialize(user, thing)
+    @user = user
   end
 
   def new?
@@ -17,16 +29,13 @@ class DishPolicy < ApplicationPolicy
   end
 
   def update?
+    # admin?
     admin_owner?
   end
 
   def destroy?
+    # admin?
     admin_owner?
   end
 
-  private
-
-  def admin_owner?
-    @user.admin == true && @dish.user_id == @user.id
-  end
 end

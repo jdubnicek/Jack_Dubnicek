@@ -15,5 +15,5 @@
         = f.text_field :price, class: "form-control"
         = f.submit "Save Changes", class: "btn btn-primary"
       .delete-dish
-        - if policy(@dish).destroy?
+        - if policy(dish).destroy?
           = link_to "Delete Dish", dish_path(@dish), data: {confirm: "Are you sure?"}, method: :delete, class: "btn btn-danger"

@@ -39,7 +39,11 @@ class ApplicationPolicy
   end
 
   def admin?
-    @user.admin == true
+    user.try(:admin?) == true
+  end
+
+  def admin_owner?
+    admin? && @dish.user_id == @user.id
   end
 
   class Scope
