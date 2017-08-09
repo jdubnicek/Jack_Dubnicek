@@ -11,5 +11,5 @@ tr
             = f.hidden_field :dish_id, value: dish.id
             = f.submit "Add to Cart", class: "btn btn-primary"
         .edit_dish
-          - if dish.user == current_user
+          - if policy(dish).update?
             = link_to "Edit Dish", edit_dish_path(dish), class: "btn btn-info"

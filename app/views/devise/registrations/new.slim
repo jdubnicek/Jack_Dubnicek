@@ -14,6 +14,9 @@ h2 Sign up
     = f.label "Password Confirmation"
     = f.password_field :password_confirmation, autocomplete: "off" 
   .form-group
+   = f.label "Admin"
+   = f.check_box :admin
+  .form-group
     = f.submit "Sign up", class: "btn btn-primary"
 
 = render "devise/shared/links"

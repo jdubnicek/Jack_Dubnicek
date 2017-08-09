@@ -1,5 +1,6 @@
 class DishesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
   def index
     @dishes = Dish.order(:category_id)
@@ -8,6 +9,7 @@ class DishesController < ApplicationController
 
   def create
     @dish = current_user.dishes.build(dish_params)
+    authorize @dish
     if @dish.save
       redirect_to dishes_path
     else
@@ -17,6 +19,7 @@ class DishesController < ApplicationController
 
   def new
     @dish = current_user.dishes.build
+    authorize @dish
   end
 
   def show
@@ -42,6 +45,11 @@ class DishesController < ApplicationController
   end
 
   private
+  def set_dish
+    @dish = Dish.find(params[:id])
+    authorize @dish
+  end
+
   def dish_params
     params.require(:dish).permit(:name, :price, :category_id, :description)
   end
