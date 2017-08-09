@@ -4,11 +4,11 @@ class DishPolicy < ApplicationPolicy
   class  Scope < Scope
     def resolve
       if user.nil?
-        scope.where('published: true')
+        scope.where("published: true")
       elsif user.try(:admin?)
         scope.all
       else
-        scope.where('published: true')
+        scope.where("published: true")
       end
     end
   end

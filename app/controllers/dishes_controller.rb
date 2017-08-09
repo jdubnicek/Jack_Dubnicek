@@ -2,9 +2,6 @@ class DishesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
-  # after_action :verify_authorized, except: :index, unless: :devise_controller?
-  # after_action :verify_policy_scoped, only: [:index]
-
   def index
     @dishes = Dish.order(:category_id)
     @menu_dish = current_order.menu_dishes.new
