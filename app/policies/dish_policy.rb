@@ -13,8 +13,9 @@ class DishPolicy < ApplicationPolicy
     end
   end
 
-  def initialize(user, thing)
+  def initialize(user, dish)
     @user = user
+    @dish = dish
   end
 
   def new?

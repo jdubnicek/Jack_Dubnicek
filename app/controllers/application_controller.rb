@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pundit
   protect_from_forgery with: :exception
+  before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :current_order
 
   rescue_from Pundit::NotAuthorizedError do
@@ -13,5 +14,10 @@ class ApplicationController < ActionController::Base
     else
       @menu = Menu.create
     end
+  end
+
+  protected
+  def configure_permitted_parameters
+   devise_parameter_sanitizer.permit(:sign_up, keys: [:admin])
   end
 end
