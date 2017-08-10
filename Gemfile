@@ -62,3 +62,35 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :test do
+
+  gem 'launchy'
+  gem 'minitest-rails'
+  gem 'minitest-capybara'
+  gem 'minitest-focus'
+  gem 'minitest-rails-capybara'
+  gem 'minitest-spec-context'
+  # customizable MiniTest output formats
+  gem 'minitest-reporters', require: false
+  gem 'shoulda-matchers'
+
+  # for test coverage report
+  gem 'simplecov', require: false
+
+  # for integration testing
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'capybara-screenshot'
+  gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
+  gem 'selenium-webdriver', "~> 3.1.0"
+  gem 'headless'
+  gem 'webmock'
+
+  # continuous visual integration
+  gem 'percy-capybara'
+
+  # For filling out forms in integration tests
+  gem 'formulaic'
+end
