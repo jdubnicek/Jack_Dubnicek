@@ -101,10 +101,6 @@ class ActiveSupport::TestCase
   end
 end
 
-class Minitest::Unit::TestCase
-  include FactoryGirl::Syntax::Methods
-end
-
 class MiniTest::Spec
   before :each do
     DatabaseCleaner.start
