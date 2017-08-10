@@ -46,8 +46,6 @@ ActiveRecord::Schema.define(version: 20170808031952) do
 
   create_table "menus", force: :cascade do |t|
     t.decimal  "subtotal",        precision: 12, scale: 3
-    t.decimal  "tax",             precision: 12, scale: 3
-    t.decimal  "shipping",        precision: 12, scale: 3
     t.decimal  "total",           precision: 12, scale: 3
     t.integer  "order_status_id"
     t.datetime "created_at",                               null: false
