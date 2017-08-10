@@ -4,6 +4,9 @@
       .form-group
         = f.label "Dish Category"
         = f.select :category_id, options_for_select([["Appetizer", 1], ["Main Course", 2], ["Side Dish", 3], ["Dessert", 4]])
+      .form-group 
+        = f.label "Image"
+        = f.file_field :image
       .form-group
         = f.label "Dish Name"
         = f.text_field :name, class: "form-control"
