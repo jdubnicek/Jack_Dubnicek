@@ -3,7 +3,7 @@ class MenuDishesController < ApplicationController
   def create
     @menu = current_order
     @menu_item = @menu.menu_dishes.new(menu_dish_params)
-    existing_menu = @menu.menu_dishes.order(category_id: params[:menu_dish][:dish_id][:category_id])
+    existing_menu = @menu.menu_dishes.where(dish_id: params[:menu_dish][:dish_id])
     if existing_menu.count >= 1
       existing_menu.last.update_column(:quantity, existing_menu.last.quantity + params[:menu_dish][:quantity].to_i)
     else
