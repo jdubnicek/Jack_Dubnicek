@@ -7,7 +7,7 @@ class MenuDishesController < ApplicationController
     if existing_menu.count >= 1
       existing_menu.last.update_column(:quantity, existing_menu.last.quantity + params[:menu_dish][:quantity].to_i)
     else
-      @menu.save!
+      @menu.save
     end
     respond_to do |format|
       format.html
