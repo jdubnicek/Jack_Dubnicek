@@ -29,31 +29,31 @@ end
 puts "Creating Dishes"
 dishes = {
   appetizer: [
-    ["Bruschetta", "Toasted French Bread topped with tomatoes and basil", "3.99" ],
-    ["Caesar Salad", "Romaine lettuce, parmesan cheese, croutons, Caesar dressing", "3.99"],
-    ["Soup du Jour", "A cup of our soup of the day", "1.99"],
-    ["Shrimp Cocktail", "Delicious fresh shrimp with a horseradish cocktail sauce", "4.99"]
+    ["Bruschetta", "Toasted French Bread topped with tomatoes, mozzarella, and basil", "3.99", "bruschetta.jpeg" ],
+    ["Caesar Salad", "Romaine lettuce, parmesan cheese, croutons, Caesar dressing", "3.99", "caesar.jpeg"],
+    ["Soup du Jour", "A cup of our soup of the day", "1.99", "soup_du_jour.jpeg"],
+    ["Shrimp Cocktail", "Delicious fresh shrimp with a horseradish cocktail sauce", "4.99", "shrimp.jpg"]
   ],
 
   main_course: [
-    ["Rotisserie Chicken", "Juicy rotisserie roasted half chicken", "9.99", ],
-    ["NY Strip", "Seared NY Strip Steak", "16.99"],
-    ["Chicken Fettucine Alfredo", "Grilled chicken in an alfredo sauce over fettucine noodles", "12.99"],
-    ["Seafood Gumbo", "Shrimp, oysters, and crabmeat in a spicy vegetable broth", "19.99"]
+    ["Rotisserie Chicken", "Juicy rotisserie roasted half chicken", "9.99", "rotisserie-chicken.jpg"],
+    ["NY Strip", "Seared NY Strip Steak", "16.99", "ny_strip.jpg"],
+    ["Chicken Fettucine Alfredo", "Grilled chicken in an alfredo sauce over fettucine noodles", "12.99", "alfredo.jpg"],
+    ["Seafood Gumbo", "Shrimp, oysters, and crabmeat in a spicy vegetable broth", "19.99", "gumbo.jpg"]
   ],
 
   side_dish: [
-    ["Spicy Sweet Corn", "Roasted sweet corn with diced sweet peppers", "1.49"],
-    ["Roasted Brussels Sprouts", "Roasted brussels sprouts with crispy pancetta", "1.49"],
-    ["Garlic Mashed Potatoes", "Thick garlic mashed potatoes topped with chives", "1.49"],
-    ["Glazed Baby Carrots", "Baby carrots glazed in honey with ginger", "1.49"]
+    ["Spicy Sweet Corn", "Roasted sweet corn with diced sweet peppers", "1.49", "corn.jpg"],
+    ["Roasted Brussels Sprouts", "Roasted brussels sprouts with crispy pancetta", "1.49", "sprouts.jpg"],
+    ["Garlic Mashed Potatoes", "Thick garlic mashed potatoes topped with chives", "1.49", "mashed.jpg"],
+    ["Glazed Baby Carrots", "Baby carrots glazed in honey with ginger", "1.49", "carrots.jpg"]
   ],
 
   dessert: [
-    ["Fruit Parfait", "Layers of fresh fruit, yogurt, and granola", "4.99"],
-    ["Flan", "Delicious custard topped with a sugary crispy shell", "4.99"],
-    ["Salted Caramel Cake", "Sweet and salty layered caramel cake", "4.99"],
-    ["Gelato", "Assorted flavors", "1.99"]
+    ["Fruit Parfait", "Layers of fresh fruit, yogurt, and granola", "4.99", "parfait.jpg"],
+    ["Flan", "Delicious custard topped with a sugary crispy shell", "4.99", "flan.jpg"],
+    ["Salted Caramel Cake", "Sweet and salty layered caramel cake", "4.99", "cake.jpg"],
+    ["Gelato", "Assorted flavors", "1.99", "gelato.jpg"]
   ]
 }
 
@@ -64,7 +64,8 @@ dishes.each do |key, values|
     Dish.create!({name: values[0],
                       description: values[1],
                       category: category,
-                      price: values[2]})
+                      price: values[2],
+                      image: File.open("#{Rails.root}/public/images/dishes/#{values[3]}")})
     puts "Dish #{values[0]} has been created"
   end
 end

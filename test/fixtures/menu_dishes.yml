@@ -1,15 +1,33 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  dish: one
-  menu: one
-  unit_price: 9.99
-  quantity: 1
-  total_price: 9.99
-
-two:
-  dish: two
-  menu: two
-  unit_price: 9.99
-  quantity: 1
-  total_price: 9.99
+# one:
+#     id: 32,
+#     dish_id: 1,
+#     menu_id: 130,
+#     unit_price: "3.99"
+#     quantity: 1,
+#     total_price: "3.99"
+#
+# two:
+#     id: 33,
+#     dish_id: 2,
+#     menu_id: 130,
+#     unit_price: "3.99"
+#     quantity: 1,
+#     total_price: "3.99"
+#
+# three:
+#     id: 34,
+#     dish_id: 6,
+#     menu_id: 130,
+#     unit_price: "16.99"
+#     quantity: 1,
+#     total_price: "16.99"
+#
+# four:
+#     id: 35,
+#     dish_id: 10,
+#     menu_id: 130,
+#     unit_price: "1.49"
+#     quantity: 1,
+#     total_price: "1.49"
