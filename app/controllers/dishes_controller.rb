@@ -9,6 +9,8 @@ class DishesController < ApplicationController
 
   def create
     @dish = current_user.dishes.build(dish_params)
+    unless dish_params.include?(:image)
+      dish_params[:image] = nil
     authorize @dish
     if @dish.save
       redirect_to dishes_path
@@ -32,6 +34,8 @@ class DishesController < ApplicationController
 
   def update
     @dish = Dish.find(params[:id])
+    unless dish_params.include?(:image)
+      dish_params[:image] = nil
     if @dish.update_attributes(dish_params)
       redirect_to dishes_path
     else

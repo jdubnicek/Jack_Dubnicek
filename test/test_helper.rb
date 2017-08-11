@@ -12,7 +12,7 @@ require 'selenium-webdriver'
 require 'minitest/rails/capybara'
 require 'minitest/reporters'
 require 'capybara/poltergeist'
-require 'capybara-screenshot/minitest'
+# require 'capybara-screenshot/minitest'
 require 'database_cleaner'
 require 'pry'
 require 'webmock/minitest'
@@ -54,7 +54,7 @@ class ActionDispatch::IntegrationTest
   Capybara.default_driver = :poltergeist
   Capybara.javascript_driver = :poltergeist
   Capybara.default_max_wait_time = 10
-  Capybara.save_path = 'test/screenshots'
+  # Capybara.save_path = 'test/screenshots'
 
   Capybara.register_driver :poltergeist do |app|
     Capybara::Poltergeist::Driver.new(app, phantomjs: Phantomjs.path, inspector: true)

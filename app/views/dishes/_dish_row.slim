@@ -1,7 +1,7 @@
 tr
   td = dish.category.display_name
   td = image_tag dish.image.url(:thumb)
-  td = dish.name
+  td.dish-name = dish.name
   td = dish.description
   td = form_for menu_dish, remote: true do |f|
       h5.text-right
