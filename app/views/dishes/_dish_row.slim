@@ -1,6 +1,9 @@
 tr
   td = dish.category.display_name
-  td = image_tag dish.image.url(:thumb)
+  - if dish.image.url == "/images/original/missing.png"
+    td.i.fa.fa-ban
+  - else
+    td = image_tag dish.image.url(:thumb)
   td.dish-name = dish.name
   td = dish.description
   td = form_for menu_dish, remote: true do |f|
