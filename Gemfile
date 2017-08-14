@@ -41,8 +41,6 @@ gem "pundit"
 gem "paperclip", "~> 5.0.0"
 # Use Capistrano for deployment
 # gem "capistrano-rails", group: :development
-gem 'dotenv-rails', groups: [:development, :test]
-
 gem 'font-awesome-sass', '~> 4.7.0'
 
 group :development, :test do
