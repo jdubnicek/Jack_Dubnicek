@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  subtotal: "26.46"
-  total: "26.46"
-  # order_status: one
-
-two:
-  subtotal: "58.72"
-  total: "58.72"
+# 
+# one:
+#   subtotal: "26.46"
+#   total: "26.46"
+#   # order_status: one
+#
+# two:
+#   subtotal: "58.72"
+#   total: "58.72"
   # order_status: two
