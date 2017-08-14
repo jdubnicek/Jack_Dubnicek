@@ -18,9 +18,7 @@ gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails", "~> 4.2"
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem "therubyracer", platforms: :ruby
-# slim as a superior templating engine
+# Slim is a superior templating engine
 gem "slim-rails"
 gem "bootstrap-sass"
 # Use jquery as the JavaScript library
@@ -29,18 +27,13 @@ gem "jquery-rails"
 gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
-# Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 3.0"
-# Use ActiveModel has_secure_password
-# gem "bcrypt", "~> 3.1.7"
 # Use Devise for Authentication
 gem "devise", "~> 4.3"
 # Use Pundit for Authorization
 gem "pundit"
 # Use Paperclip for Image Uploading
 gem "paperclip", "~> 5.0.0"
-# Use Capistrano for deployment
-# gem "capistrano-rails", group: :development
+# Enhanced fonts
 gem 'font-awesome-sass', '~> 4.7.0'
 
 group :development, :test do

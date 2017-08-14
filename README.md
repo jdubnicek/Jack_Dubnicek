@@ -1,24 +1,19 @@
-# README
+Hello and welcome to the app "Your Menu"!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app was built using Ruby version 2.3.1 and Rails version 5.0.4.
 
-Things you may want to cover:
+This application uses Paperclip for image uploading.  Paperclip has a dependency on ImageMagick which the user will need to install if they dont already have it on their system.  The user can run ```which convert``` and if it returns a path, ImageMagick is already installed on the User's system.  If not, full information on how to install ImageMagick can be found here ```https://github.com/thoughtbot/paperclip```.  
 
-* Ruby version
+To run this application:
 
-* System dependencies
+In your terminal please navigate to the root folder of the application and run ```bundle install```.
 
-* Configuration
+Once complete create and seed the database by entering ```rails db:create db:migrate db:seed```.
 
-* Database creation
+Start the server by running ```RAILS_ENV=development rails s```.
 
-* Database initialization
+In your browser, navigate to ```localhost:3000```.  You should see the home page of the application.
 
-* How to run the test suite
+Any questions please email ```jdubnicek@gmail.com```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Thanks!
